@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://bw7qjg0plfyf5"]
+
+[ext_resource type="Script" path="res://scripts/ima.gd" id="1_up3oe"]
+[ext_resource type="Texture2D" uid="uid://dp2vekqmwoi5j" path="res://sprites/Projeteis/Esfera.png" id="2_4d8vr"]
+[ext_resource type="Texture2D" uid="uid://cfpmhqcqn04ei" path="res://sprites/Projeteis/Esfera ataque.png" id="3_7rotg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpv5p"]
+atlas = ExtResource("3_7rotg")
+region = Rect2(0, 0, 79, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2uf5"]
+atlas = ExtResource("3_7rotg")
+region = Rect2(79, 0, 79, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh00d"]
+atlas = ExtResource("3_7rotg")
+region = Rect2(158, 0, 79, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr3ox"]
+atlas = ExtResource("3_7rotg")
+region = Rect2(237, 0, 79, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4yel"]
+atlas = ExtResource("3_7rotg")
+region = Rect2(316, 0, 79, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf3xn"]
+atlas = ExtResource("3_7rotg")
+region = Rect2(395, 0, 79, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35o24"]
+atlas = ExtResource("3_7rotg")
+region = Rect2(474, 0, 79, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3djpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpv5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2uf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh00d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr3ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4yel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf3xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35o24")
+}],
+"loop": false,
+"name": &"tiro",
+"speed": 14.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tyux5"]
+radius = 8.0
+
+[node name="ima" type="Area2D" groups=["ima"]]
+collision_layer = 32
+collision_mask = 8
+script = ExtResource("1_up3oe")
+
+[node name="texture" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_4d8vr")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(-21, 0)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_3djpf")
+animation = &"tiro"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 8
+shape = SubResource("CircleShape2D_tyux5")

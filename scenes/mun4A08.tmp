@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd3s5us0f4k4c"]
+
+[ext_resource type="FontFile" uid="uid://dqfv5ayk0n" path="res://font/Xolonium-Regular.ttf" id="1_4m55h"]
+[ext_resource type="Script" path="res://scripts/munição.gd" id="2_vcet8"]
+
+[node name="munição" type="Label"]
+offset_right = 90.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("1_4m55h")
+theme_override_font_sizes/font_size = 64
+text = "00"
+script = ExtResource("2_vcet8")
