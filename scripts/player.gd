@@ -82,6 +82,7 @@ func apply_knockback(direction: Vector2) -> void:
 	velocity = -direction * força_knockback
 	move_and_slide()
 
+#Função para o personagem morrer
 func morto():
 	is_dead = true
 	velocity = Vector2.ZERO
